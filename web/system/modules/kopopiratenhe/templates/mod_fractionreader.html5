@@ -1,0 +1,37 @@
+<div class="<?php echo $this->class; ?>"<?php echo $this->cssID; ?><?php if ($this->style): ?> style="<?php echo $this->style; ?>"<?php endif; ?>>
+    <h1><?php echo $this->Fraction->title; ?></h1>
+    <?php if($this->Fraction->street OR $this->Fraction->postal OR $this->Fraction->city): ?>
+    <?php echo $this->Fraction->street; ?><br>
+    <?php echo $this->Fraction->postal; ?> <?php echo $this->Fraction->city; ?><br>
+    <br>
+    <?php endif; ?>
+    <?php if($this->Fraction->phone): ?>
+    Telefon: <?php echo $this->Fraction->phone; ?><br>            
+    <?php endif; ?>
+    <?php if($this->Fraction->fax): ?>
+    Telefax: <?php echo $this->Fraction->fax; ?><br>            
+    <?php endif; ?>
+    <?php if($this->Fraction->email): ?>
+    <a href="mailto:<?php echo $this->Fraction->email; ?>"><?php echo $this->Fraction->email; ?></a><br>            
+    <?php endif; ?>
+    <?php if($this->Fraction->website): ?>
+    <a href="<?php echo $this->Fraction->website; ?>"><?php echo $this->Fraction->website; ?></a><br>            
+    <?php endif; ?>
+
+    <?php if(is_array($this->Fraction->members)): ?>                
+    <h2>Mitglieder der Fraktion</h2>
+    <?php foreach($this->Fraction->members as $Member): ?>
+    <a href="<?php echo $Member->url; ?>"><?php echo $Member->firstname; ?> <?php echo $Member->lastname; ?></a><?php if($Member->position): ?> <small>(<?php echo $Member->position; ?>)</small><?php endif; ?><?php if($Member->attribute != 'last'): ?>, <?php endif; ?>
+    <?php endforeach; ?>
+    <?php endif; ?>
+    
+    <?php if($this->Fraction->twitter OR $this->Fraction->facebook): ?>
+    <h2>SocialMedia</h2>
+    <?php if($this->Fraction->twitter): ?>
+    <a href="<?php echo $this->Fraction->twitter; ?>"><?php echo $this->Fraction->twitter; ?></a><br>            
+    <?php endif; ?>
+    <?php if($this->Fraction->facebook): ?>
+    <a href="<?php echo $this->Fraction->facebook; ?>"><?php echo $this->Fraction->facebook; ?></a><br>            
+    <?php endif; ?>
+    <?php endif; ?>
+</div>

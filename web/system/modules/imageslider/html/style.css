@@ -1,0 +1,15 @@
+/* Imageslider */
+.labelbox {margin:10px 0; padding-left:10px;}
+.heading { color:#aaa; padding-bottom:7px; font-size:12px;}
+
+.labelbox img { padding-right:3px; padding-bottom:3px;}
+
+.be_imageslider_elements .img_container { float:left; margin-bottom:5px; padding-right:15px;}
+.be_imageslider_elements .img_container img { border:1px solid #CCC}
+.be_imageslider_elements .info_container p { font-size:10px; color:#999; margin-bottom:3px;}
+.be_imageslider_elements .info_container p.description { font-weight:bold;}
+
+.be_imageslider_elements p.file,
+.be_imageslider_elements p.folder { color:#888; font-weight:bold; padding-top:5px; padding-left:25px; }
+.be_imageslider_elements p.file {background:transparent url(page.png) left center no-repeat;}
+.be_imageslider_elements p.folder {background:transparent url(folder.png) left center no-repeat;}

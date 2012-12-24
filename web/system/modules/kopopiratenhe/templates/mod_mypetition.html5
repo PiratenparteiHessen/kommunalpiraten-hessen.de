@@ -1,0 +1,39 @@
+<div class="<?php echo $this->class; ?>"<?php echo $this->cssID; ?><?php if ($this->style): ?> style="<?php echo $this->style; ?>"<?php endif; ?>>
+<form method="post">
+    <div class="formbody">
+        <input type="hidden" name="FORM_SUBMIT" value="tl_kopopi_antraege">
+        <input type="hidden" name="REQUEST_TOKEN" value="<?php echo REQUEST_TOKEN; ?>">
+
+        <p>                
+            <label for="ctrl_title">Antragstitel</label>
+            <input type="text" maxlength="255" required="" value="" class="text" id="ctrl_title" name="title">                
+        </p>
+
+        <p>                
+            <label for="ctrl_parlament_id">Parlament</label>
+            <select class="select" id="ctrl_parlament_id" name="parlament_id">
+            <?php if(is_array($this->Parlamente)): ?>
+            <?php foreach($this->Parlamente as $Parlament): ?>
+            <option value=""><?php echo $Parlament->title; ?></option>
+            <?php endforeach; ?>
+            <?php endif; ?>
+            </select>                
+        </p>
+        
+        <p>
+            <label for="ctrl_antragstext">Antragstext</label>
+            <textarea cols="80" rows="12" class="textarea" id="ctrl_antragstext" name="antragstext"></textarea>
+        </p>
+        
+        <p>
+            <label for="ctrl_begruendung">Begr&uuml;ndung</label>
+            <textarea cols="80" rows="12" class="textarea" id="ctrl_begruendung" name="begruendung"></textarea>
+        </p>
+
+        <div class="submit_container">
+            <input type="submit" value="Daten speichern" class="submit">
+        </div>
+
+    </div>
+</form>
+</div>

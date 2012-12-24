@@ -1,0 +1,23 @@
+<div class="<?php echo $this->class; ?>"<?php echo $this->cssID; ?><?php if ($this->style): ?> style="<?php echo $this->style; ?>"<?php endif; ?>>
+    <?php foreach($this->Users as $User): ?>
+    
+    <div class="element">
+    <?php if ($User->avatar->addImage): ?>
+        <div class="image_container<?php echo $User->avatar->floatClass; ?>"<?php if ($User->avatar->margin || $User->avatar->float): ?> style="<?php echo trim($User->avatar->margin . $User->avatar->float); ?>"<?php endif; ?>>
+        <?php if ($User->avatar->href): ?>
+        <a href="<?php echo $User->avatar->href; ?>"<?php echo $User->avatar->attributes; ?> title="<?php echo $User->avatar->alt; ?>">
+        <?php endif; ?>
+            <img src="<?php echo $User->avatar->src; ?>"<?php echo $User->avatar->imgSize; ?> alt="<?php echo $User->avatar->alt; ?>">
+        <?php if ($User->avatar->href): ?>
+        </a>
+        <?php endif; ?>
+        <?php if ($User->avatar->caption): ?>
+        <div class="caption"><?php echo $User->avatar->caption; ?></div>
+        <?php endif; ?>
+        </div>
+    <?php endif; ?>
+
+    <?php echo $User->firstname; ?> <?php echo $User->lastname; ?>
+    </div>
+    <?php endforeach; ?>
+</div>

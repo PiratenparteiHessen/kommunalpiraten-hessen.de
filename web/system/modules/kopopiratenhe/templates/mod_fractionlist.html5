@@ -1,0 +1,32 @@
+<div class="<?php echo $this->class; ?>"<?php echo $this->cssID; ?><?php if ($this->style): ?> style="<?php echo $this->style; ?>"<?php endif; ?>>
+    <?php foreach($this->Fractions as $Fraction): ?>
+    <div class="element">                
+    <h2><?php echo $Fraction->title; ?></h2>
+    <table cellspacing="0" cellpadding="0">
+        <tr>
+            <td class="col_0">Kontaktinformationen</td>
+            <td class="col_1">Mitglieder</td>
+        </tr>
+        <tr valign="top">
+            <td class="col_0">                
+            <?php if($Fraction->phone): ?>
+            Telefon: <?php echo $Fraction->phone; ?><br>            
+            <?php endif; ?>
+            <?php if($Fraction->website): ?>
+            <a href="<?php echo $Fraction->website; ?>"><?php echo $Fraction->website; ?></a><br>            
+            <?php endif; ?>
+            <a href="<?php echo $Fraction->url; ?>">Mehr Informationen zur Fraktion</a>
+            </td>
+            <td class="col_1">
+                <?php if(is_array($Fraction->members)): ?>                
+                <?php foreach($Fraction->members as $Member): ?>
+<?php echo $Member->firstname; ?> <?php echo $Member->lastname; ?><?php if($Member->position): ?> <small>(<?php echo $Member->position; ?>)</small><?php endif; ?><?php if($Member->attribute != 'last'): ?>, <?php endif; ?>
+                <?php endforeach; ?>
+                <?php endif; ?>    
+            </td>
+        </tr>
+    </table>
+    
+    </div>
+    <?php endforeach; ?>
+</div>
